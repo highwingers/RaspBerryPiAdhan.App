@@ -7,4 +7,6 @@ cordova run android --RF8M81H7SBR
 chrome://inspect/#devices
 		SM-N9750 #   RF8M81H7SBR
 
+IOS TO DO
+
 
