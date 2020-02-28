@@ -1,0 +1,5 @@
+Android Notes:
+	chrome://inspect/#devices
+		SM-N9750 #   RF8M81H7SBR
+
+cd \\raspberrypi.local\share\app
