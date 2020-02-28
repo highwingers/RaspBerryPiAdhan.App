@@ -1,5 +1,10 @@
-Android Notes:
-	chrome://inspect/#devices
+git clone https://github.com/highwingers/RaspBerryPiAdhan.App.git
+cd C:\Users\Default\Documents\Docs\Programming\Cordova\mDns
+npm install to restore packages
+cordova run android --RF8M81H7SBR
+
+
+chrome://inspect/#devices
 		SM-N9750 #   RF8M81H7SBR
 
-cd \\raspberrypi.local\share\app
+
