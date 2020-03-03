@@ -1,12 +1,28 @@
-git clone https://github.com/highwingers/RaspBerryPiAdhan.App.git
-cd C:\Users\Default\Documents\Docs\Programming\Cordova\mDns
-npm install to restore packages
+*** Android
+Cd to Clone Directory
+
+npm i
+cordova prepare 
 cordova run android --RF8M81H7SBR
 
+cordova plugin remove cordova-plugin-zeroconf
+cordova plugin add cordova-plugin-zeroconf
 
 chrome://inspect/#devices
 		SM-N9750 #   RF8M81H7SBR
 
-IOS TO DO
+**** IOS 
+
+Clone repo
+cd into it
+cordova add platform ios
+delete platforms and plugins directory
+npm i
+cordova prepare
+cordova ios build
+cd platforms/ios
+open xcode project
+
+Signing and Certificat choose TEAM and deploy to device
 
 
