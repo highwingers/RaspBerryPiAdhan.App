@@ -28,28 +28,54 @@
         * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
             * Enable inline JS: add 'unsafe-inline' to default-src
     -->
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+
     <meta name="format-detection" content="telephone=no">
     <meta name="msapplication-tap-highlight" content="no">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="css/index.css">
     <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <title>Hello World</title>
+
+    <title>Adhan</title>
 </head>
-    <body>
-        <div class="container">
-            <h4>Scanning Network.....</h4>
-                <div id="display" class="text-center"></div>  
-            
-            <div>
-                <b>Instructions</b>
-                if this is your 1st time setting up this device then make sure its connected to your WIFI. to connect to your WIFI please download the <a href="https://play.google.com/store/apps/details?id=io.guh.berrylan">BerryLan App</a><br /><br />
-                if your device is already connected to network then it should show up in the list above by name "Adhan Player",
+<body>
+
+    <div class="container">
+
+        <div class="text-center" style="width:100%;padding:5px;margin:5px;">
+            <div class="alert alert-success" role="alert" id="search-devices">
+                <h5>
+                    <div style="margin:-4px;" class="spinner-border" role="status"></div>&nbsp;&nbsp;
+                    Connecting to device...
+                </h5>
             </div>
+
+            <div id="display"></div>
+
+
         </div>
-        <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="js/zeroconf.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
-    </body>
+        <div>
+            <div class="row">
+                <div class="col"> <a href="pages/setup.html" class="btn btn-success btn-block"> + Setup Device</a></div>
+            </div>
+            <br />
+            <div class="row">
+                <div class="col"> <button type="button" class="btn btn-info btn-block"> Troubleshoot</button></div>
+            </div>
+
+
+        </div>
+        <div>
+            <b>Instructions</b>
+            if this is your 1st time setting up this device then make sure its connected to your WIFI. to connect to your WIFI please download the <a href="https://play.google.com/store/apps/details?id=io.guh.berrylan">BerryLan App</a><br /><br />
+            if your device is already connected to network then it should show up in the list above by name "Adhan Player",
+        </div>
+    </div>
+    <script type="text/javascript" src="cordova.js"></script>
+        <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="js/zeroconf.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+</body>
 </html>

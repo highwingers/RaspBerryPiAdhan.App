@@ -27,7 +27,8 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function () {
-        discover.getServices("display");
+            discover.getServices("display");  
+      
     }
 };
 

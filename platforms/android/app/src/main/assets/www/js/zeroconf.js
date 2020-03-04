@@ -1,24 +1,30 @@
 var discover = (function () {
 
-    var services=[]
+    var _obj = {
+        services: [],
+        divAppended:0
+    }
+
+
 
 
     function getServices(appendToDiv) {
         serviceScan(appendToDiv);
-        //setInterval(function () {
-        //    zeroconf.reInit();
-        //    serviceScan(appendToDiv);
-        //}, 2000)
+
     }
 
     function displayServices(div, service) {
-        console.log(service)
+
+
+
         if (service.ipv4Addresses[0] != undefined) {
-            if (!services.includes(service.name)) {
-                div.innerHTML += '<p><a href="http://' + service.ipv4Addresses + ':' + service.port + '" class="btn btn-outline-success"> ' + service.name + '</a> </p>';
-                services.push(service.name)
+            if ((!_obj.services.includes(service.name)) && service.name.toLowerCase().indexOf("adhan") >= 0) {
+                div.innerHTML += '<p><a href="http://' + service.ipv4Addresses + ':' + service.port + '" class="btn btn-warning btn-rounded btn-block btn-lg"> <span class="glyphicon glyphicon-home"></span>' + service.name + '</a> </p>';
+                _obj.services.push(service.name)
+                document.getElementById("search-devices").style.display = "none";
             }
         }
+
        
         
     }
@@ -55,12 +61,31 @@ var discover = (function () {
             }
         });
 
+        //if (_obj.services.length>0) {
+        //    if (_obj.divAppended==0) {
+        //        devicesFound(div)
+        //        _obj.divAppended = 1;
+        //    }
+        //}
+
+
         setTimeout(function () {
             zeroconf.close();
             serviceScan(appendToDiv)
-        }, 6000)
+        }, 3000)
 
         
+    }
+
+    function devicesFound(d) {
+
+        document.getElementById("search-devices").style.display = "none";
+        var node = document.createElement("DIV");                 // Create a <li> node
+        var textnode = document.createTextNode("Device(s) Found.");
+        node.appendChild(textnode)
+        d.append(node);
+
+
     }
 
     return {
