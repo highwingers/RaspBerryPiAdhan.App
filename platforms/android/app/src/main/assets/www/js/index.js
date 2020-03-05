@@ -18,7 +18,7 @@
  */
 var app = {
     // Application Constructor
-    initialize: function() {
+    initialize: function () {
         document.addEventListener('deviceready', this.onDeviceReady.bind(this), false);
     },
 
@@ -27,9 +27,39 @@ var app = {
     // Bind any cordova events here. Common events are:
     // 'pause', 'resume', etc.
     onDeviceReady: function () {
-            discover.getServices("display");  
-      
+        this.connectionCheck();
+        discover.getServices("display");
+
+    },
+
+    connectionCheck: function () {
+        var self = this;
+        if (navigator.connection.type != 'wifi') {
+            navigator.notification.confirm('You must be connected to WIFI.', callBack, 'Enable Wifi', ['Enable'])            
+        }
+
+        function callBack(b) {
+            if (b==1) {
+                self.openSettings('wifi')
+            }
+        }
+    },
+    openSettings: function (_setting) {
+
+        if (window.cordova && window.cordova.plugins.settings) {
+            window.cordova.plugins.settings.open(_setting, function () {
+                //console.log('opened settings');
+            },
+                function () {
+                    //console.log('failed to open settings');
+                }
+            );
+        } else {
+            //console.log('openNativeSettingsTest is not active!');
+        }
     }
+
+
 };
 
 app.initialize();
