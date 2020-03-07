@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <title>Set up</title>
+</head>
+<body>
+    <div>
+        <button type="button" class="btn btn-light btn-block text-left" onclick="history.go(-1)">&laquo; Back</button>
+    </div>
+
+    <div class="container-fluid">
+        <h2 class="text-center">Setup Device</h2>
+        <div class="alert alert-success" role="alert" id="search-devices">
+            Below steps are REQUIRED to setup a <b>NEW</b> device, or if you want to connect your device to a <b>different wifi</b> network.
+        </div>
+
+
+        <ul>
+            <li>
+                Download <b>Berrylan app</b> for your phone. <i>This app is only required to connect your device with your wifi network.</i><br />
+                <a href="https://play.google.com/store/apps/details?id=io.guh.berrylan" target="_blank">
+                    <img src="../img/google-play.svg" />
+                </a>&nbsp;
+                <a href="https://itunes.apple.com/us/app/berrylan/id1436156018" target="_blank">
+                    <img src="../img/app-store.svg" />
+                </a>
+            </li>
+            <li>You must enable bluetooth, wifi & location services to locate your device.</li>
+            <li>
+                Open BerryLan app and choose "Adhan Setup" (This is the name of your device)
+            </li>
+            <li>Choose the WIFI connection of your home & provide its password</li>
+            <li>Once your device is connected with your wifi, it will show you your IP Address (Some digits), that means you are all set, you can close the BerryLan app</li>
+            <li>if you choose so, you may delete BerryLan app from your phone.</li>
+            <li>Press the Back button above, Now we should be able to locate your device.</li>
+        </ul>
+    </div>
+
+    <script type="text/javascript" src="cordova.js"></script>
+
+</body>
+</html>
